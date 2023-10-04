@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchWeatherData, WeatherData } from '../API/OpenWeatherApi';
+import { fetchWeatherData, WeatherData } from '../Services/API/OpenWeatherApi';
 import moment from 'moment';  
 
 interface WeatherProps {
@@ -32,13 +32,17 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
   if (!weather || typeof weather.main === 'undefined') return null;
 
   const isWarm = weather.main.temp > 15;
+
+  const locationName: unknown = weather.name;// had to define the weather.name as unknown
+  const myLocationName = locationName as React.ReactNode;
+
   const advisoryText = isWarm
-    ? 'Area is warm for beekeeping'
-    : 'Area is cold/cloudy/rainy for beekeeping, do not go and see them';
+    ? 'Good Weather for Beekeeping'
+    : 'Bad Weather for Beekeeping';
   const backgroundStyle = {
     backgroundImage: isWarm
-      ? 'url(./public/img/bees_sun.jpg)'
-      : 'url(./public/img/clouds_cold.jpg)',
+      ? 'url(/img/bees_sun.jpg)'
+      : 'url(/img/clouds_cold.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   };
@@ -56,14 +60,14 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
       <div className="flex justify-between space-x-8">
         <div className="flex flex-col items-center">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-24 h-24 p-2 text-yellow-400 fill-current">
-            {/* SVG content */}
+            
           </svg>
-          <h1 className="text-xl font-semibold">{weather.name}</h1>
+          <h1 className="text-xl font-semibold">{myLocationName}</h1>
         </div>
         <span className="font-bold text-6xl ">{weather.main.temp}°C</span>
       </div>
       <div className="flex justify-between mt-8 space-x-4 text-gray-400">
-        {/* Other content */}
+        
       </div>
       <div className="advisory" >
         <p className='text-5xl font-bold'>{advisoryText}</p>

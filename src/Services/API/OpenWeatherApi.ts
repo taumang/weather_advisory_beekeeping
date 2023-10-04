@@ -1,4 +1,3 @@
-
 const api = {
     key: "77278187e14ff4191735bfb0e76d7643",
     base: "https://api.openweathermap.org/data/2.5/"
@@ -6,7 +5,7 @@ const api = {
 
 export interface WeatherData {
     main: {
-        temp_min(temp_min: any): import("react").ReactNode;
+        temp_min(temp_min: unknown): import("react").ReactNode;
         temp: number;
         location: string;
     };
