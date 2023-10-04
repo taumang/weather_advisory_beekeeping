@@ -49,6 +49,10 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
   const currentYear = new Date().getFullYear();
 
   return (
+    <div>
+      <br />
+      <br />
+      <br />
     <div className="h-screen bg-cover bg-no-repeat" style={backgroundStyle}>
     <div 
     className="max-w-md 
@@ -81,6 +85,7 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
       </p>
       </div>
       
+    </div>
     </div>
     </div>
   );
