@@ -9,6 +9,8 @@ interface WeatherProps {
 const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
+  //The geolocation has been replaced with the search bar in the App.tsx
+  
   useEffect(() => {
     const fetchData = async () => {
       if (!location) {
@@ -50,9 +52,7 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
 
   return (
     <div>
-      <br />
-      <br />
-      <br />
+
     <div className="h-screen bg-cover bg-no-repeat" style={backgroundStyle}>
     <div 
     className="max-w-md 

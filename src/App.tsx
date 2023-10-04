@@ -16,7 +16,7 @@ const App: React.FC = () => {
   };
 
   return (
-   <div className="App bg-gray-600">
+   <div className="App">
       <div className="relative ">
   <label htmlFor="location-input" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Enter location</label>
   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
