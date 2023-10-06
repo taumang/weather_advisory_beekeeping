@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   return (
    <div className="App">
-      <div className="relative ">
+      <div className="relative" >
   <label htmlFor="location-input" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Enter location</label>
   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
     <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -39,8 +39,8 @@ const App: React.FC = () => {
     Enter
   </button>
   
-</div>
-<WeatherDisplay location={submitLocation} />
+    </div>
+      <WeatherDisplay location={submitLocation} />
     </div>
   );
 }

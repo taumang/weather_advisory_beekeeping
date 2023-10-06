@@ -51,21 +51,19 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div>
+    <div >
 
-    <div className="h-screen bg-cover bg-no-repeat" style={backgroundStyle}>
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-no-repeat no-scroll" style={backgroundStyle}>
     <div 
     className="max-w-md 
-              p-8 mx-auto 
-              rounded-lg 
-              bg-gray-900 
-              text-gray-100 
-              bg-opacity-80 grid place-items-center ">
+                p-8 
+                rounded-lg 
+                bg-gray-900 
+                text-gray-100 
+                bg-opacity-90">
       <div className="flex justify-between space-x-8">
         <div className="flex flex-col items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-24 h-24 p-2 text-yellow-400 fill-current">
-            
-          </svg>
+         
           <h1 className="text-xl font-semibold">{myLocationName}</h1>
         </div>
         <span className="font-bold text-6xl ">{weather.main.temp}°C</span>
@@ -81,7 +79,7 @@ const WeatherDisplay: React.FC<WeatherProps> = ({ location }) => {
       <br />
 
       <p className='font-thin'>
-        Created by <a href="https://kagishoph.co.za">kagishoph.co.za</a> , {currentYear} &copy;
+        Created by <a href="https://kagishoph.co.za"><b>kagishoph.co.za</b></a> , {currentYear} &copy;
       </p>
       </div>
       
